@@ -46,6 +46,5 @@ int main(void) {
 	printf("%d\n", -0x333d);
 	printf("%d\n", htoi("-0x333d"));
 	
-	printf("%d", atoi("asd"));
 	return EXIT_SUCCESS;
 }
