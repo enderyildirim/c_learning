@@ -33,5 +33,6 @@ int main(void) {
 	char s2[] = "b d";
 	squeeze2(s1, s2);
 	printf("%s", (const char*)s1);
+	return EXIT_SUCCESS;
 }
 
