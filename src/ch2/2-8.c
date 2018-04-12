@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 void rightrot(int* x, int n) {
-	unsigned int mask = 0xffffffff;
+	unsigned int mask = ~(0u);
 	mask = mask<<n;
 	int leftRemaining = *x & mask;
 	*x >>= n;

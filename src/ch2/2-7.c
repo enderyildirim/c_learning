@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 void invert(int* x, int p, int n) {
-	unsigned int mask = 0xffffffff;
+	unsigned int mask = ~(0u);
 	mask = ~(mask<<n);
 	mask<<=(p - n);
 	*x ^= mask;

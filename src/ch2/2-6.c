@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 void setbits(int* x, int p, int n, int y) {
-	unsigned int clearMask = 0xffffffff; // 32-bit unsigned int, refer to page 50 last paragraph
+	unsigned int clearMask = ~(0u); // 32-bit unsigned int, refer to page 50 last paragraph
 	clearMask = ~(clearMask<<n);
 	y &= clearMask; 
 	y <<= (p - n);
