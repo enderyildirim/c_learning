@@ -1,8 +1,10 @@
 /*
- * 2-3.c
+ * The C Programming Language Second Edition 
+ * Exercise 2-3 answer 
  *
- *  Created on: Apr 11, 2018
- *      Author: eyildirim
+ *  Created on: Apr 12, 2018
+ *      Author: Ender Yildirim
+ *        Mail: enderyildirim@outlook.com
  */
 
 #include <stdio.h>
