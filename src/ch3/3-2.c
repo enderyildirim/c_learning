@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE sizeof(char)*8*6
+#define MAX_SIZE 100
 
 void escape(char s[], char t[]) {
 	int i, j;
@@ -49,14 +49,14 @@ void escape2(char s[], char t[]) {
 }
 
 int main(void) {
-	char* t = malloc(SIZE);
+	char t[MAX_SIZE];
 	t[0] = 'a';
 	t[1] = '\n';
 	t[2] = '\t';
 	t[3] = 'c';
 	t[4] = 'x';
 	t[5] = '\0';
-	char* s = malloc(SIZE);
+	char s[MAX_SIZE];
 	escape(s, t);
 	printf("%s\n", s);
 	escape2(t, s);
