@@ -13,6 +13,21 @@
 
 #define STR_LENGTH 100
 
+int strlen(char s[]) {
+	int i = 0;
+	while(s[i++] != '\0');
+	return i - 1;
+}
+
+void reverse(char s[]) {
+	int length = strlen(s);
+	for (int i = 0; i < length / 2; ++i) {
+		int temp = s[i];
+		s[i] = s[length - i - 1];
+		s[length - i - 1] = temp;
+	}
+}
+
 void itoa(int n, char s[]) {
 	int i, sign, reminder;
 	i = 0;
@@ -24,7 +39,7 @@ void itoa(int n, char s[]) {
 		s[i++] = '-';
 	}
 	s[i] = '\0';
-	_strrev(s); 
+	reverse(s);
 }
 
 
