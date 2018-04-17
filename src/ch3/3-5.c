@@ -28,9 +28,9 @@ void reverse(char s[]) {
 }
 
 void itob(int n, char s[], int b) {
-	int i;
+	int i, reminder;
 	for (i = 0; n != 0; i++, n /= b) {
-		s[i] = (n % b) + '0';
+		s[i] = (reminder = n % b) >= 10 ? reminder - 10 + 'A'  : reminder + '0';
 	}
 	s[i] = '\0';
 	reverse(s);
@@ -38,9 +38,13 @@ void itob(int n, char s[], int b) {
 
 int main(void) {
 	char s[MAX_SIZE];
-	itob(21, s, 8);
+	itob(123, s, 8);
 	printf("%s\n",s);
-	itob(15, s, 2);
+	itob(123, s, 2);
+	printf("%s\n",s);
+	itob(123, s, 16);
+	printf("%s\n",s);
+	itob(123, s, 10);
 	printf("%s\n",s);
 	return EXIT_SUCCESS;
 }
