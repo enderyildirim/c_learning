@@ -11,7 +11,7 @@
 #include <string.h>
 #include <limits.h>
 
-#define STR_LENGTH 100
+#define MAX_SIZE 100
 
 int strlen(char s[]) {
 	int i = 0;
@@ -33,7 +33,7 @@ void itoa(int n, char s[]) {
 	i = 0;
 	sign = n;
 	do {
-		s[i++] = ((reminder = n % 10) < 0 ? -reminder : reminder)+ '0';
+		s[i++] = ((reminder = n % 10) < 0 ? -reminder : reminder) + '0';
 	} while ((n /= 10) != 0);
 	if (sign < 0) {
 		s[i++] = '-';
@@ -45,7 +45,7 @@ void itoa(int n, char s[]) {
 
 
 int main(void) {
-	char s[STR_LENGTH];
+	char s[MAX_SIZE];
 	itoa(INT_MIN, s);
 	printf("%s\n", s);
 	itoa(13, s);
