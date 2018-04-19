@@ -11,11 +11,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_SIZE sizeof(char)*8*100
+#define MAX_SIZE 100
 
 void expand(char s1[], char s2[]) {
 	int i, j;
-	for (i = 0, j = 0; s1[i] != '\0' && i != strlen(s1) - 1; i++) {
+	for (i = 0, j = 0; s1[i] != '\0' && i != strlen(s1) - 2; i++) {
 		char begin = s1[i];
 		char end = s1[i + 2];
 		if (('a' <= begin && begin <= 'z' && 'a' <= end && end <= 'z')
@@ -30,7 +30,7 @@ void expand(char s1[], char s2[]) {
 }
 
 int main(void) {
-	char* s = malloc(MAX_SIZE);
+	char s[MAX_SIZE];
 	char* s1 = "a-b";
 	char* s2 = "a-z0-9";
 	char* s3 = "a-bA-Z";

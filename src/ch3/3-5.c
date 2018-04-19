@@ -12,28 +12,13 @@
 
 #define MAX_SIZE 100
 
-int strlen(char s[]) {
-	int i = 0;
-	while(s[i++] != '\0');
-	return i - 1;
-}
-
-void reverse(char s[]) {
-	int length = strlen(s);
-	for (int i = 0; i < length / 2; ++i) {
-		int temp = s[i];
-		s[i] = s[length - i - 1];
-		s[length - i - 1] = temp;
-	}
-}
-
 void itob(int n, char s[], int b) {
 	int i, reminder;
 	for (i = 0; n != 0; i++, n /= b) {
 		s[i] = (reminder = n % b) >= 10 ? reminder - 10 + 'A'  : reminder + '0';
 	}
 	s[i] = '\0';
-	reverse(s);
+	_strrev(s);
 }
 
 int main(void) {
