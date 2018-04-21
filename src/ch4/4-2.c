@@ -31,9 +31,9 @@ double atof(char s[]) {
 		power /= 10;
 	}
 	if (s[i] == 'e') {
-		power = s[++i] == '-' ? (1.0/10.0) : 10.0;
+		power = s[++i] == '-' ? (1.0 / 10.0) : 10.0;
 		int times = s[++i] - '0';
-		while(times) {
+		while (times) {
 			val *= power;
 			times--;
 		}
