@@ -11,7 +11,7 @@
 #include <ctype.h>
 #include <math.h>
 
-double atof1(char s[]) {
+double atof(char s[]) {
 	double val, power;
 	int i, sign;
 	for (i = 0; isspace(s[i]); ++i)
@@ -44,7 +44,7 @@ double atof1(char s[]) {
 int main(void) {
 	char* s = "-1254.123e-3";
 	double x = -1254.123e-3;
-	printf("%f\n", atof1(s));
+	printf("%f\n", atof(s));
 	printf("%f", x);
 }
 
