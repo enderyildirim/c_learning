@@ -15,7 +15,7 @@
 double pop();
 void push(double);
 double top(void);
-void duplicate(double*, int);
+void duplicate(void);
 void swapTop(void);
 void clear(void);
 
@@ -24,24 +24,19 @@ int main(void) {
 		push(i);
 	}
 	printf("%f\n", top());
-	
-	double dup[ARRAYSIZE];
-	duplicate(dup, ARRAYSIZE);
-	for (int i = 0; i < ARRAYSIZE; ++i) {
-		printf("%f\t", dup[i]);
-	}
-	printf("\n");
+	duplicate();
+	printf("%f\n", top());
 	swapTop();
 	printf("%f\n", top());
 	clear();
 	printf("%f\n", top());
-	return EXIT_SUCCESS;
+	exit(EXIT_SUCCESS);
 }
 
 #define MAXVAL 100    /* maximum depth of val stack */
 
-static int sp = 0;           /* next free stack position */
-static double val[MAXVAL];   /* value stack */
+int sp = 0;           /* next free stack position */
+double val[MAXVAL];   /* value stack */
 
 /* push: push f onto value stack */
 void push(double f) {
@@ -71,13 +66,11 @@ double top(void) {
 	}
 }
 
-/* duplicate: duplicates stack to given array */
-void duplicate(double* v, int n) {
-	if(n > sp)
-		n = sp;
-	for (int i = 0; i < n; ++i) {
-		v[i] = val[i];
-	}
+/* duplicate:  duplicate the top element of the stack */
+void duplicate(void) {
+    double top = pop();
+    push(top);
+    push(top);
 }
 
 void swapTop(void) {
