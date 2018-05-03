@@ -10,8 +10,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ARRAYSIZE 10
-
 double pop();
 void push(double);
 double top(void);
@@ -30,7 +28,7 @@ int main(void) {
 	printf("%f\n", top());
 	clear();
 	printf("%f\n", top());
-	exit(EXIT_SUCCESS);
+	return EXIT_SUCCESS;
 }
 
 #define MAXVAL 100    /* maximum depth of val stack */
