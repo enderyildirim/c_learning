@@ -13,7 +13,12 @@
 int buff = -1;
 
 int getch(void) {
-	return buff != -1 ? buff : getchar();
+	if(buff != -1) {
+		int tmp = buff;
+		buff = -1;
+		return tmp;
+	} else
+		return getchar();
 }
 
 void ungetch(int c) {
@@ -24,10 +29,10 @@ void ungetch(int c) {
 }
 
 int main(void) {
-	getch();
-	getch();
-	getch();
-	getch();
+	int c = getch();
+	ungetch(c);
+	ungetch(c);
+	ungetch(c);
 	return EXIT_SUCCESS;
 }
 
