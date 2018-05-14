@@ -16,7 +16,7 @@ char buff[BUFFSIZE];
 int bufp = 0;
 
 int getch(void) {
-	return bufp > 0 ? buff[bufp] : getchar();
+	return bufp > 0 ? buff[--bufp] : getchar();
 }
 
 void ungetch(int c) {
