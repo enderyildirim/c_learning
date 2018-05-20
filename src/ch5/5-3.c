@@ -10,13 +10,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void strcat(char *s, char *t) {
+char *strcat(char *s, char *t) {
 	while (*++s)
 		;
 	while(*t) {
 		*s++ = *t++;
 	}
 	*s++ = '\0';
+	return s;
 }
 
 int main(void) {
