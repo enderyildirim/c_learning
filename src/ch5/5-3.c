@@ -13,9 +13,8 @@
 char *strcat(char *s, char *t) {
 	while (*++s)
 		;
-	while(*t) {
-		*s++ = *t++;
-	}
+	while((*s++ = *t++))
+		;
 	*s++ = '\0';
 	return s;
 }
